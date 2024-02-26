@@ -308,10 +308,9 @@ abstract contract DestinationVault is SecurityBase, ERC20, Initializable, IDesti
             // Extract the error signature (first 4 bytes) from the revert reason.
             bytes4 errorSignature;
             // solhint-disable no-inline-assembly
-            // Munged by certora, does not affect the code in scope.
-            // assembly {
-            //     errorSignature := mload(add(returnData, 0x20))
-            // }
+            assembly {
+                errorSignature := mload(add(returnData, 0x20))
+            }
 
             bytes4 balanceAmountSig = bytes4(keccak256("BaseAmountReceived(uint256)"));
 
