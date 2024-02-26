@@ -8,7 +8,7 @@ methods {
     // Base
     function _.getPriceInEth(address token) external with (env e) => getPriceInEthCVL[token][e.block.timestamp] expect (uint256);
     function _.getBptIndex() external => getBptIndexCVL expect (uint256);
-    function _.current() external => currentCVL(); // can be dispatched if returned values are important
+    function _.current() external => NONDET; // can be dispatched if returned values are important
     
     // Vault
     // Summarized instead of linked to help with runtime. 
