@@ -25,7 +25,7 @@ methods {
 
     // ERC20's `decimals` summarized as 6, 8 or 18 (validDecimal), can be changed to ALWAYS(18) for better runtime.
     // This helps with runtime because arbitrary decimal value creates many nonlinear operations.
-    function _.decimals() external => ALWAYS(18) // validDecimal expect uint256; // validDecimal is 6, 8 or 18 for a better summary
+    function _.decimals() external => ALWAYS(18); // validDecimal expect uint256; // validDecimal is 6, 8 or 18 for a better summary
 
     // Can help reduce complexity, think carefully about implications before using.
     // May need to think of a more clever way to summarize this.
