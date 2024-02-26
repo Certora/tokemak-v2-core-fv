@@ -8,6 +8,7 @@ methods {
     // Base
     function _.getPriceInEth(address token) external with (env e) => getPriceInEthCVL[token][e.block.timestamp] expect (uint256);
     function _.getBptIndex() external => getBptIndexCVL expect (uint256);
+    function _.current() external => currentCVL(); // can be dispatched if returned values are important
     
     // Vault
     // Summarized instead of linked to help with runtime. 
@@ -24,7 +25,7 @@ methods {
 
     // ERC20's `decimals` summarized as 6, 8 or 18 (validDecimal), can be changed to ALWAYS(18) for better runtime.
     // This helps with runtime because arbitrary decimal value creates many nonlinear operations.
-    function _.decimals() external => validDecimal expect uint256; 
+    function _.decimals() external => ALWAYS(18) // validDecimal expect uint256; // validDecimal is 6, 8 or 18 for a better summary
 
     // Can help reduce complexity, think carefully about implications before using.
     // May need to think of a more clever way to summarize this.
@@ -33,7 +34,6 @@ methods {
     /** Dispatchers **/
     // base
     function _.accessController() external => DISPATCHER(true); // needed in constructor, rest is handled by linking
-    function _.current() external => DISPATCHER(true); // can be summarized as currentCVL() for better runtime
     function _.getStats() external => DISPATCHER(true);
     function _.getValidatedSpotPrice() external => DISPATCHER(true);
     function _.isShutdown() external => DISPATCHER(true);
