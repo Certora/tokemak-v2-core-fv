@@ -101,11 +101,11 @@ ghost mapping(address => bool) isDestinationQueuedForRemovalCVL;
 // For properties
 ghost uint16 _swapCostOffsetPeriodGhost;
 
-hook Sload uint16 defaultValue _swapCostOffsetPeriod STORAGE {
+hook Sload uint16 defaultValue _swapCostOffsetPeriod {
     require _swapCostOffsetPeriodGhost == defaultValue;
 }
 
-hook Sstore _swapCostOffsetPeriod uint16 defaultValue STORAGE {
+hook Sstore _swapCostOffsetPeriod uint16 defaultValue {
     _swapCostOffsetPeriodGhost = defaultValue;
 }
 
