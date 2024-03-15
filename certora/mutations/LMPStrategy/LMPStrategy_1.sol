@@ -315,7 +315,7 @@ contract LMPStrategy is ILMPStrategy, SecurityBase {
 
         ensureDestinationRegistered(params.destinationIn);
         // mutation: destinationOut => destinationIn
-        ensureDestinationRegistered(params.destinationOut);
+        ensureDestinationRegistered(params.destinationIn);
 
         // when a vault is shutdown, rebalancing can only pull assets from destinations back to the vault
         if (lmpVault.isShutdown() && params.destinationIn != address(lmpVault)) revert OnlyRebalanceToIdleAvailable();
