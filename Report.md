@@ -25,7 +25,7 @@
 
 # Overview
 
-This report compiles the bugs found and properties proven in the Tokemak contest. Mutations are used to evaluate the quality of the properties. The mutations are described below and were made available at the end of the contest, you can find them [here](https://github.com/Certora/tokemak-v2-core-fv/tree/main/certora/mutations/LMPStrategy). Additionally, the top specifications have been added to the [contest repo](https://github.com/certora/Tokemak-v2-core-fv) and some specific properties have been included in this report as good examples. You can find the final results for the competition [here](https://docs.google.com/spreadsheets/d/10qRTmvjmNyVbIyy3lG-OTMKL5KUK_RGV5MOaOjSs4jQ/edit#gid=1970712821).
+This report encapsulates the findings from the Tokemak audit competition, where the community identified bugs and verified code properties to ensure the security and correctness of the system. Notably, the audit's effectiveness was further tested by introducing high-severity bugs (mutations) post-competition, assessing the resilience of the verified properties against these mutations. Detailed descriptions of these mutations, alongside top specifications identified during the contest, are provided to illustrate the audit's depth. For an in-depth analysis, including specific properties and the impact of mutations, refer to the final results here.  The final results, accessible [here](https://docs.google.com/spreadsheets/d/10qRTmvjmNyVbIyy3lG-OTMKL5KUK_RGV5MOaOjSs4jQ/edit#gid=1970712821), provide a performance overview, showcasing which participant detected each mutation. For direct access to the contributions, the [contest repository](https://github.com/certora/Tokemak-v2-core-fv) includes the top participants' work.
 
 ## Competition Details
 
@@ -97,7 +97,7 @@ _Submitted by Pavel2202_
 
 _Submitted by lucasts95_
 
-  The `validate` function lacks verification for certain parameters, leading to inconsistencies with the documentation. Parameters like `minInDays`, `maxInDays`, `relaxStepInDays`, `relaxThresholdInDays`, and `tightenStepInDays` as defined in the test files are not in line with their declarations. To maintain code consistency and stability, it's suggested to declare parameters with expected data values as constants.
+  The `validate` function lacks verification for certain parameters, leading to inconsistencies with the documentation. Parameters like `minInDays`, `maxInDays`, `relaxStepInDays`, `relaxThresholdInDays`, and `tightenStepInDays` as defined in the test files are not in line with their declarations. To maintain code consistency and stability, it's suggested to declare parameters with expected data values as constants. This property was identified by using Certora prover. The relevant properties can are [offsetEdges](),[decreaseByThree](), and [swapCostOffsetPeriodIncreaseByOne]().
 
 
 ## [L-07](https://github.com/hats-finance/Tokemak-0x4a2d708ea6b0c04186ecb774cfad1e50fb5efc0b/issues/22) LMPStrategyConfig.validate Inconsistently Checks for MAX_NAV_TRACKING
