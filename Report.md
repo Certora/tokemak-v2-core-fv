@@ -97,7 +97,7 @@ _Submitted by Pavel2202_
 
 _Submitted by lucasts95_
 
-  The `validate` function lacks verification for certain parameters, leading to inconsistencies with the documentation. Parameters like `minInDays`, `maxInDays`, `relaxStepInDays`, `relaxThresholdInDays`, and `tightenStepInDays` as defined in the test files are not in line with their declarations. To maintain code consistency and stability, it's suggested to declare parameters with expected data values as constants. This property was identified by using Certora prover. The relevant properties can are [offsetEdges](),[decreaseByThree](), and [swapCostOffsetPeriodIncreaseByOne]().
+  The `validate` function lacks verification for certain parameters, leading to inconsistencies with the documentation. Parameters like `minInDays`, `maxInDays`, `relaxStepInDays`, `relaxThresholdInDays`, and `tightenStepInDays` as defined in the test files are not in line with their declarations. To maintain code consistency and stability, it's suggested to declare parameters with expected data values as constants. This property was identified by using Certora prover. The relevant properties can are [offsetEdges](https://github.com/Certora/tokemak-v2-core-fv/blob/main/certora-luckypatty/specs/LMPStrategy_8.spec#L133-L134), [decreaseByThree](https://github.com/Certora/tokemak-v2-core-fv/blob/main/certora-luckypatty/specs/LMPStrategy_9.spec#L147-L161), and [swapCostOffsetPeriodIncreaseByOne](https://github.com/Certora/tokemak-v2-core-fv/blob/main/certora-luckypatty/specs/LMPStrategy_10.spec#L147-L154).
 
 
 ## [L-07](https://github.com/hats-finance/Tokemak-0x4a2d708ea6b0c04186ecb774cfad1e50fb5efc0b/issues/22) LMPStrategyConfig.validate Inconsistently Checks for MAX_NAV_TRACKING
