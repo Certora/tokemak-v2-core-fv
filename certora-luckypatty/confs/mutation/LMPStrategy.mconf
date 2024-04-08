@@ -1,0 +1,12 @@
+{ 
+   "gambit": {                                                 
+      "filename" : "../../../src/strategy/LMPStrategy.sol",
+      "num_mutants": 10,
+      "solc_remappings": [
+        "openzeppelin-contracts=../../../lib/openzeppelin-contracts/contracts"
+      ]
+   },
+   "manual_mutants": {
+      "../../../src/strategy/LMPStrategy.sol": "../../mutations/LMPStrategy"
+   }
+}
